@@ -2,7 +2,7 @@ import { useState } from "react"
 import Comment from "./Comment"
 
 function CommentList({ comments }) {
-
+    const [commentList, setCommentList] = useState(comments)
     const [toggle, setToggle] = useState(false)
     const [search, setSearch] = useState("")
 
@@ -16,17 +16,25 @@ function CommentList({ comments }) {
         setSearch(event.target.value)
     }
 
-    const commentToDisplay = comments.filter(comment => {
+    function handelDeleteComment(event) {
+        const newArray = commentList.filter(comment => {
+            return comment.user !== event.target.name
+        })
+        console.log(newArray)
+        setCommentList(newArray)
+    }
+
+    const commentToDisplay = commentList.filter(comment => {
         return comment.user.toLowerCase().includes(search.toLowerCase())
     })
 
     return (
         <>
-            <button id="comment-btn">
+            <button id="comment-btn" onClick={handleToggleComments}>
                 {context}
             </button>
             <div id="comment-lists">
-                <h2>{comments.length} comments</h2>
+                <h2>{commentList.length} comments</h2>
                 
                 {toggle &&
                     <ul >
@@ -37,7 +45,7 @@ function CommentList({ comments }) {
                         />
 
                         {commentToDisplay.map(comment => (
-                            <Comment key={comment.id} comment={comment} />
+                            <Comment key={comment.id} comment={comment} onDeleteChange={handelDeleteComment}/>
                         ))}
                     </ul>
                 }
