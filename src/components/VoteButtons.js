@@ -5,18 +5,15 @@ function VoteButtons( {upvotes, downvotes} ) {
     const [upvotesCount, setUpVotesCount] = useState(upvotes)
     const [downvotesCount, setDownVotesCount] = useState(downvotes)
 
-    function handldeUpVote() {
+    function handldeVote() {
         setUpVotesCount(currentVotes => currentVotes + 1)
     }
 
-    function handldeDownVote() {
-        setDownVotesCount(currentVotes => currentVotes - 1)
-    }
 
     return (
         <>
-            <button id="upvotes" onClick={handldeUpVote}>{upvotesCount} 👍</button>
-            <button id="downvotes" onClick={handldeDownVote}>{downvotesCount} 👎</button>
+            <button id="upvotes" onClick={handldeVote}>{upvotesCount} 👍</button>
+            <button id="downvotes" onClick={handldeVote}>{downvotesCount} 👎</button>
         </>
         
     )
