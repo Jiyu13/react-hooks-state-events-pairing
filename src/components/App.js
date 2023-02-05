@@ -1,4 +1,5 @@
 import video from "../data/video.js";
+import VoteButtons from "./VoteButtons.js";
 
 function App() {
   console.log("Here's your data:", video);
@@ -16,14 +17,15 @@ function App() {
       />
       <h1>{title}</h1>
       <div>{views} views | {createdAt}</div>
-      <button id="upvotes">{upvotes} 👍</button>
-      <button id="downvotes">{downvotes} 👎</button>
+
+      <VoteButtons upvotes={upvotes} downvotes={downvotes}/>
+
       
       <hr />
 
       <button id="comments">Hide Comments</button>
       <h2>{comments.length} comments</h2>
-      <ul>
+      <ul >
         {comments.map(comment => {
           return <li key={comment.id} id={comment.id}>
             <h3>{comment.user}</h3>
