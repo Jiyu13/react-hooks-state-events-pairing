@@ -1,6 +1,6 @@
 import video from "../data/video.js";
 import VoteButtons from "./VoteButtons.js";
-import Comments from "./Comments.js"
+import CommentList from "./CommentList.js"
 
 function App() {
   console.log("Here's your data:", video);
@@ -24,7 +24,7 @@ function App() {
       
       <hr />
 
-      <Comments comments={comments}/>
+      <CommentList comments={comments}/>
 
 
     </div>
