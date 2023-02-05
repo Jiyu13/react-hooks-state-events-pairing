@@ -1,4 +1,5 @@
 import { useState } from "react"
+import VoteButtons from "./VoteButtons"
 
 function Comments({ comments }) {
 
@@ -21,6 +22,7 @@ function Comments({ comments }) {
                     <ul >
                     {comments.map(comment => {
                     return <li key={comment.id} id={comment.id}>
+                        <VoteButtons upvotes={0} downvotes={0}/>
                         <h3>{comment.user}</h3>
                         <p>{comment.comment}</p>
                     </li>
