@@ -15,8 +15,8 @@ function VoteButtons( {upvotes, downvotes} ) {
 
     return (
         <>
-            <button id="upvotes" onClick={handldeUpVote}>{upvotes} 👍</button>
-            <button id="downvotes" onClick={handldeDownVote}>{downvotes} 👎</button>
+            <button id="upvotes" onClick={handldeUpVote}>{upvotesCount} 👍</button>
+            <button id="downvotes" onClick={handldeDownVote}>{downvotesCount} 👎</button>
         </>
         
     )
