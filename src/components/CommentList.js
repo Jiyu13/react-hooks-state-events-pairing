@@ -31,7 +31,7 @@ function CommentList({ comments }) {
                 {toggle &&
                     <ul >
                         <input type="text"
-                               placeholder="Search..."
+                               placeholder="Search By User..."
                                name="search"
                                onChange={handleSearch}
                         />
