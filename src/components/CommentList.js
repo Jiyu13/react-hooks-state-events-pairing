@@ -22,7 +22,7 @@ function CommentList({ comments }) {
 
     return (
         <>
-            <button id="comment-btn" onClick={handleToggleComments}>
+            <button id="comment-btn">
                 {context}
             </button>
             <div id="comment-lists">
@@ -37,7 +37,7 @@ function CommentList({ comments }) {
                         />
 
                         {commentToDisplay.map(comment => (
-                            <Comment comment={comment} />
+                            <Comment key={comment.id} comment={comment} />
                         ))}
                     </ul>
                 }
